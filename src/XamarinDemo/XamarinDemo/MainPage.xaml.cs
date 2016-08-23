@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinDemo.Interface;
 
 namespace XamarinDemo
 {
@@ -12,6 +9,18 @@ namespace XamarinDemo
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        async void OnCall(object s, EventArgs e)
+        {
+            if (await DisplayAlert("Alert", "Would you like to call " + txtPhoneNumber.Text, "OK", "Cancel"))
+            {
+                var dialer = DependencyService.Get<IDialer>();
+                if (dialer != null)
+                {
+                    dialer.Dial(txtPhoneNumber.Text);
+                }
+            }
         }
     }
 }
