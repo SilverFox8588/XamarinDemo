@@ -29,5 +29,10 @@ namespace XamarinDemo
         {
             await Navigation.PushAsync(new CallHistoryPage());
         }
+
+        async void BtnXamlBasic_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new XamlBasicDemoPage());
+        }
     }
 }

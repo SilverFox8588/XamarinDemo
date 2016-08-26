@@ -17,8 +17,11 @@
       <Label Text="Enter a phone number:" />
       <Entry x:Name="txtPhoneNumber" Placeholder="Phone number" />
       <Button x:Name="btnCall" Text="Call" Clicked="OnCall" />
+
+      <Button x:Name="btnXamlBasic" Text="Navigation to Xaml Basics demo" Clicked="BtnXamlBasic_OnClicked"></Button>
       
-      <Button x:Name="btnCallHistory" Text="Navigation to call history" Clicked="BtnCallHistory_OnClicked"></Button>
+      <Button x:Name="btnCallHistory" IsVisible ="False" Text="Navigation to call history" Clicked="BtnCallHistory_OnClicked"></Button>
+
     </StackLayout>
   </ContentPage.Content>
 
