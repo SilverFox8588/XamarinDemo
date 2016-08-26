@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace XamarinDemo
@@ -16,7 +12,7 @@ namespace XamarinDemo
             InitializeComponent();
 
             PhoneNumbers = new List<string>();
-            MainPage = new NavigationPage(new XamarinDemo.MainPage());
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

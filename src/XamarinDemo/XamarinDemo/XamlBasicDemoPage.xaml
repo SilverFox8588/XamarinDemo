@@ -5,9 +5,9 @@
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness" iOS="20, 40, 20, 20" Android="20, 20, 20, 20"></OnPlatform>
   </ContentPage.Padding>
-  <ContentPage.Content>
+  <StackLayout>
     <Slider ValueChanged="Slider_OnValueChanged"></Slider>
-    <Label x:Name="lblShow" Text="This will show the value of Silder." FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label x:Name="LblShow" Text="This will show the value of Silder." FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button Text="Click me" VerticalOptions="Center" Clicked="Button_OnClicked"></Button>
-  </ContentPage.Content>
+  </StackLayout>
 </ContentPage>

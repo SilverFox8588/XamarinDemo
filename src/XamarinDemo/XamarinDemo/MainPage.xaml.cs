@@ -13,13 +13,13 @@ namespace XamarinDemo
 
         async void OnCall(object s, EventArgs e)
         {
-            string phoneNumber = txtPhoneNumber.Text;
-            App.PhoneNumbers.Add(phoneNumber);
+            string phoneNumber = TxtPhoneNumber.Text;
             if (await DisplayAlert("Alert", "Would you like to call " + phoneNumber, "OK", "Cancel"))
             {
                 var dialer = DependencyService.Get<IDialer>();
                 if (dialer != null)
                 {
+                    App.PhoneNumbers.Add(phoneNumber);
                     dialer.Dial(phoneNumber);
                 }
             }
