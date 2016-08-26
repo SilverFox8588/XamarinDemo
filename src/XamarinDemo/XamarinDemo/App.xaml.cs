@@ -9,11 +9,14 @@ namespace XamarinDemo
 {
     public partial class App : Application
     {
+        public static List<string> PhoneNumbers { set; get; }
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new XamarinDemo.MainPage();
+            PhoneNumbers = new List<string>();
+            MainPage = new NavigationPage(new XamarinDemo.MainPage());
         }
 
         protected override void OnStart()
