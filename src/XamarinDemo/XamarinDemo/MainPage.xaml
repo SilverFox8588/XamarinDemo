@@ -4,25 +4,34 @@
              xmlns:local="clr-namespace:XamarinDemo"
              x:Class="XamarinDemo.MainPage">
 
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <x:Double x:Key="buttonBorderWith">1</x:Double>
+      <Font x:Key="buttonFont">Large</Font>
+      <Color x:Key="buttonColor">#FFF</Color>
+    </ResourceDictionary>
+  </ContentPage.Resources>
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness"
                 iOS="20, 40, 20, 20"
                 Android="20, 20, 20, 20" />
   </ContentPage.Padding>
-  <ContentPage.Content>
-    <StackLayout VerticalOptions="FillAndExpand"
-                 HorizontalOptions="FillAndExpand"
-                 Orientation="Vertical"
-                 Spacing="15">
-      <Label Text="Enter a phone number:" />
-      <Entry x:Name="TxtPhoneNumber" Placeholder="Phone number" />
-      <Button x:Name="BtnCall" Text="Call" Clicked="OnCall" />
-      
-      <Button x:Name="BtnCallHistory" Text="Navigation to call history" Clicked="BtnCallHistory_OnClicked"></Button>
 
-      <Button x:Name="BtnXamlBasic" Text="Navigation to Xaml Basics demo" Clicked="BtnXamlBasic_OnClicked"></Button>
+  <StackLayout VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand"
+               Orientation="Vertical"
+               Spacing="15">
+    <Label Text="Enter a phone number:" />
+    <Entry x:Name="TxtPhoneNumber" Placeholder="Phone number" />
+    <Button x:Name="BtnCall" Text="Call" Clicked="OnCall" BorderWidth="{StaticResource buttonBorderWith}" 
+            Font="{StaticResource buttonFont}" TextColor="{StaticResource buttonColor}" />
 
-    </StackLayout>
-  </ContentPage.Content>
+    <Button x:Name="BtnCallHistory" Text="Navigation to call history" TextColor="{x:Static Color.Green}" Clicked="BtnCallHistory_OnClicked"></Button>
+
+    <Button x:Name="BtnXamlBasic" Text="Navigation to Xaml Basics demo" Clicked="BtnXamlBasic_OnClicked"></Button>
+
+    <Button x:Name="BtnXamlBasicBinding" Text="Navigation to Xaml Basics Binding demo" Clicked="BtnXamlBasicBinding_OnClicked"></Button>
+
+  </StackLayout>
 
 </ContentPage>

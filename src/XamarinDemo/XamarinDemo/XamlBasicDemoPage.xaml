@@ -9,5 +9,29 @@
     <Slider ValueChanged="Slider_OnValueChanged"></Slider>
     <Label x:Name="LblShow" Text="This will show the value of Silder." FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
     <Button Text="Click me" VerticalOptions="Center" Clicked="Button_OnClicked"></Button>
+
+
+    <!--Data Binding Basics-->
+    <StackLayout>
+      <Label Text="ROTATION"
+             BindingContext="{x:Reference Name=SliderDemo}"
+             Rotation="{Binding Path=Value}"
+             FontAttributes="Bold"
+             FontSize="Large"
+             HorizontalOptions="Center"
+             VerticalOptions="CenterAndExpand" />
+
+      <Slider x:Name="SliderDemo"
+              Maximum="360"
+              VerticalOptions="CenterAndExpand" />
+
+      <Label BindingContext="{x:Reference SliderDemo}"
+            Text="{Binding Value,
+                          StringFormat='The angle is {0:F0} degrees'}"
+            FontAttributes="Bold"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+    </StackLayout>
   </StackLayout>
 </ContentPage>
